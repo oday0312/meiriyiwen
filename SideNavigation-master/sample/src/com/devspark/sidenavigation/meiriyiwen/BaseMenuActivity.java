@@ -393,7 +393,7 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     }
     public void invokeActivity4(String title, int resId ) {
 
-        Intent intent = new Intent(this, baseMenuActivity_setting.class);
+        Intent intent = new Intent(this, baseMenuActivity3.class);
         intent.putExtra(EXTRA_TITLE, title);
         intent.putExtra(EXTRA_RESOURCE_ID, resId);
         intent.putExtra(EXTRA_MODE, sideNavigationView.getMode() == SideNavigationView.Mode.LEFT ? 0 : 1);
@@ -410,7 +410,7 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
     public void invokeActivity5(String title, int resId ) {
 
-        Intent intent = new Intent(this, baseMenuActivity_setting.class);
+        Intent intent = new Intent(this, baseMenuActivity2.class);
         intent.putExtra(EXTRA_TITLE, title);
         intent.putExtra(EXTRA_RESOURCE_ID, resId);
         intent.putExtra(EXTRA_MODE, sideNavigationView.getMode() == SideNavigationView.Mode.LEFT ? 0 : 1);

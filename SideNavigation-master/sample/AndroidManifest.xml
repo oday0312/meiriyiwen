@@ -27,7 +27,6 @@
         <activity android:name=".BaseMenuActivity"/>
         <activity android:name=".baseMenuActivity2"/>
         <activity android:name=".baseMenuActivity3"/>
-        <activity android:name=".baseMenuActivity_setting"/>
         <activity android:name=".menuActivity5"/>
         <activity android:name=".webViewActivity"/>
         <activity android:name="com.theindex.CuzyAdSDK.CuzyTBKPresentationActivity"   />
