@@ -27,8 +27,6 @@ public class baseMenuActivity2 extends BaseMenuActivity {
         super.onCreate(savedInstanceState);
 
 
-        CuzyAdSDK.getInstance().setContext(this);
-        CuzyAdSDK.getInstance().registerApp("200056","051a9e4652fc5b881dfc6ba74d3cd633");
 
 
         setContentView(R.layout.menuactivity1);
@@ -84,6 +82,8 @@ public class baseMenuActivity2 extends BaseMenuActivity {
 
         @Override
         protected String doInBackground(String...params){
+
+
 
             rawData = CuzyAdSDK.getInstance().fetchRawItems("", "鞋子", 0);
             Log.d("cuzy.com: ", "return of raw data: Thindex:  " + rawData.size());
