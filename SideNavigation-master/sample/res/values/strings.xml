@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">译言精选</string>
+    <string name="app_name">每日一文</string>
     <string name="title1">译言精选-社会</string>
     <string name="title2">译言精选-科技</string>
     <string name="title3">译言精选-生活</string>
