@@ -4,14 +4,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.*;
+import android.widget.ImageView;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
-import com.devspark.sidenavigation.meiriyiwen.LoadMoreListView.LoadMoreListView;
 import com.devspark.sidenavigation.meiriyiwen.imageCache.ImageLoader;
 import com.umeng.analytics.MobclickAgent;
 import org.apache.http.HttpEntity;
@@ -23,7 +21,6 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 /**
@@ -44,7 +41,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     public ImageView icon;
     public SideNavigationView sideNavigationView;
 
-    public LoadMoreListView listView;
 
     public String htmlContentString = "";
 
@@ -55,7 +51,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
     public ImageLoader imageLoader=  null;
 
-    public ProgressBar progressBar = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -65,34 +60,9 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
 
         setContentView(R.layout.menuactivity1);
-        listView = (LoadMoreListView)findViewById(R.id.listView);
-        listView.setDividerHeight(0);
-        listView.setOnLoadMoreListener(new LoadMoreListView.OnLoadMoreListener() {
-            public void onLoadMore() {
-                // Do the work to load more items at the end of list
-                // here
-                new LoadDataTask().execute();
-            }
-        });
-
-        // Click on ListView Row:
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3)
-            {
-                Object o = listView.getItemAtPosition(position);
-                // Here i want have values of the clicked row,- like the name and/or id...,- but i get the following:
-                // Output o.toString(): com.example.customlistview.MainActivity$Person@41252310
-                Log.i("TEST", o.toString());
-
-                // Here i intend to Start a new Activity passing the "name" of the user (and/or id ...) to the new activity
-            }
-        });
 
 
 
-        testSimpleListView();
 
         icon = (ImageView) findViewById(android.R.id.icon);
         sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
@@ -100,8 +70,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
         sideNavigationView.setMenuClickCallback(this);
 
 
-        progressBar =  (ProgressBar)findViewById(R.id.myprogressBar);
-        progressBar.setVisibility(View.INVISIBLE);
 
         if (getIntent().hasExtra(EXTRA_TITLE)) {
             String title = getIntent().getStringExtra(EXTRA_TITLE);
@@ -179,7 +147,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
         @Override
         protected void onPostExecute(String result){
             //might want to change "executed" for the returned string passed into onPostExecute() but that is upto you
-            progressBar.setVisibility(View.INVISIBLE);
 
             if (LoadingMoreFlag==0)
             {
@@ -194,7 +161,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
         @Override
         protected void onPreExecute(){
-            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -439,7 +405,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
 
             //adapter.notifyDataSetChanged();
-            listView.onLoadMoreComplete();
 
             super.onPostExecute(result);
         }
@@ -448,7 +413,7 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
         protected void onCancelled() {
             // Notify the loading more operation has finished
             //((LoadMoreListView) getListView()).onLoadMoreComplete();
-            listView.onLoadMoreComplete();;
+            //listView.onLoadMoreComplete();;
         }
     }
 

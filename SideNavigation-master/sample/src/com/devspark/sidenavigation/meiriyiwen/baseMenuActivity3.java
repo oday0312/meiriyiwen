@@ -29,10 +29,6 @@ public class baseMenuActivity3 extends BaseMenuActivity {
 
 
         setContentView(R.layout.menuactivity1);
-        listView = (LoadMoreListView)findViewById(R.id.listView);
-        listView.setDividerHeight(0);
-         progressBar = (ProgressBar)findViewById(R.id.myprogressBar);
-        progressBar.setVisibility(View.INVISIBLE);
         testSimpleListView();
 
         icon = (ImageView) findViewById(android.R.id.icon);
@@ -79,13 +75,12 @@ public class baseMenuActivity3 extends BaseMenuActivity {
 
         @Override
         protected void onPostExecute(String result){
-            progressBar.setVisibility(View.INVISIBLE);
             reloadListView();
         }
 
         @Override
         protected void onPreExecute(){
-            progressBar.setVisibility(View.VISIBLE);
+            //progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
