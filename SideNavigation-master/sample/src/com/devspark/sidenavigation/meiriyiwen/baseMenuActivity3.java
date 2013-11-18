@@ -8,7 +8,6 @@ import android.widget.*;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.meiriyiwen.LoadMoreListView.LoadMoreListView;
 import com.devspark.sidenavigation.meiriyiwen.imageCache.ImageLoader;
-import com.theindex.CuzyAdSDK.*;
 
 
 /**
@@ -27,14 +26,11 @@ public class baseMenuActivity3 extends BaseMenuActivity {
         super.onCreate(savedInstanceState);
 
 
-        CuzyAdSDK.getInstance().setContext(this);
-        CuzyAdSDK.getInstance().registerApp("200056","051a9e4652fc5b881dfc6ba74d3cd633");
 
 
         setContentView(R.layout.menuactivity1);
         listView = (LoadMoreListView)findViewById(R.id.listView);
         listView.setDividerHeight(0);
-        int layoutID = com.theindex.CuzyAdSDK.R.layout.cuzy_list_cell_2;
          progressBar = (ProgressBar)findViewById(R.id.myprogressBar);
         progressBar.setVisibility(View.INVISIBLE);
         testSimpleListView();
@@ -64,12 +60,6 @@ public class baseMenuActivity3 extends BaseMenuActivity {
     {
 
 
-        imageLoader=new ImageLoader(this);
-        adapter = new cuzyAdapter(rawData, this,this, imageLoader,1);
-
-
-        listView.setAdapter(adapter);
-
 
     }
     public void testCuzySDKfunction()
@@ -84,10 +74,7 @@ public class baseMenuActivity3 extends BaseMenuActivity {
         @Override
         protected String doInBackground(String...params){
 
-            rawData = CuzyAdSDK.getInstance().fetchRawItems("6", "女包", 0);
-            Log.d("cuzy.com: ", "return of raw data: Thindex:  " + rawData.size());
-
-            return"Executed";
+            return "hello";
         }
 
         @Override

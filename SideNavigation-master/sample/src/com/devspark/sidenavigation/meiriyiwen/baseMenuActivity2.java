@@ -8,7 +8,6 @@ import android.widget.*;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.meiriyiwen.LoadMoreListView.LoadMoreListView;
 import com.devspark.sidenavigation.meiriyiwen.imageCache.ImageLoader;
-import com.theindex.CuzyAdSDK.*;
 
 
 /**
@@ -32,7 +31,6 @@ public class baseMenuActivity2 extends BaseMenuActivity {
         setContentView(R.layout.menuactivity1);
         listView = (LoadMoreListView)findViewById(R.id.listView);
         listView.setDividerHeight(0);
-        int layoutID = com.theindex.CuzyAdSDK.R.layout.cuzy_list_cell_2;
 
         progressBar = (ProgressBar)findViewById(R.id.myprogressBar);
         progressBar.setVisibility(View.INVISIBLE);
@@ -63,11 +61,6 @@ public class baseMenuActivity2 extends BaseMenuActivity {
     {
 
 
-        imageLoader=new ImageLoader(this);
-        adapter = new cuzyAdapter(rawData, this,this, imageLoader,1);
-
-
-        listView.setAdapter(adapter);
 
 
     }
@@ -85,8 +78,6 @@ public class baseMenuActivity2 extends BaseMenuActivity {
 
 
 
-            rawData = CuzyAdSDK.getInstance().fetchRawItems("", "鞋子", 0);
-            Log.d("cuzy.com: ", "return of raw data: Thindex:  " + rawData.size());
 
             return"Executed";
         }

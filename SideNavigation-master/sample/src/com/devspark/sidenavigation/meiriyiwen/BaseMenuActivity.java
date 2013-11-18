@@ -13,7 +13,6 @@ import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.meiriyiwen.LoadMoreListView.LoadMoreListView;
 import com.devspark.sidenavigation.meiriyiwen.imageCache.ImageLoader;
-import com.theindex.CuzyAdSDK.*;
 import com.umeng.analytics.MobclickAgent;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -46,8 +45,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     public SideNavigationView sideNavigationView;
 
     public LoadMoreListView listView;
-    public ArrayList<CuzyTBKItem> rawData = new ArrayList<CuzyTBKItem>();
-    public ArrayList<CuzyTBKItem> LoadingMoreArray = new ArrayList<CuzyTBKItem>();
 
     public String htmlContentString = "";
 
@@ -56,7 +53,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     protected int imagesInParallel = 2;
     protected String imageCacheDir = null;
 
-    public  cuzyAdapter adapter = null;
     public ImageLoader imageLoader=  null;
 
     public ProgressBar progressBar = null;
@@ -66,8 +62,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
         super.onCreate(savedInstanceState);
 
 
-        CuzyAdSDK.getInstance().setContext(this);
-        CuzyAdSDK.getInstance().registerApp("200056","051a9e4652fc5b881dfc6ba74d3cd633");
 
 
         setContentView(R.layout.menuactivity1);
@@ -130,9 +124,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
 
 
-        imageLoader=new ImageLoader(this);
-        adapter = new cuzyAdapter(rawData, this,this, imageLoader,1);
-        listView.setAdapter(adapter);
 
 
     }
@@ -219,12 +210,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     }
     public void reloadListView(){
 
-        adapter = new cuzyAdapter(rawData, this,this,imageLoader,1);
-
-        listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-
-        listView.setAdapter(adapter);
 
     }
 

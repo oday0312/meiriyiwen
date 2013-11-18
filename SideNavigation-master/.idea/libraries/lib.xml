@@ -12,7 +12,6 @@
       <root url="jar://$PROJECT_DIR$/sample/lib/gcm.jar!/" />
       <root url="jar://$PROJECT_DIR$/sample/lib/umeng_sdk.jar!/" />
       <root url="jar://$PROJECT_DIR$/sample/lib/android-query-full.0.25.5-beta.jar!/" />
-      <root url="jar://$PROJECT_DIR$/sample/lib/CuzyAdSDKAndroid.jar!/" />
       <root url="jar://$PROJECT_DIR$/sample/lib/apache-mime4j-0.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/sample/lib/android-sqlite-asset-helper.jar!/" />
       <root url="jar://$PROJECT_DIR$/sample/lib/signpost-jetty6-1.2.1.1.jar!/" />
