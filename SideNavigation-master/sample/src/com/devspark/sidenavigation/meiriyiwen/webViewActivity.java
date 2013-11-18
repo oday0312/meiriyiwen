@@ -1,6 +1,7 @@
 package com.devspark.sidenavigation.meiriyiwen;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -41,7 +42,7 @@ public class webViewActivity extends Activity {
             uiwebview.getSettings().setBuiltInZoomControls(true);
             uiwebview.getSettings().setJavaScriptEnabled(true);
             uiwebview.loadUrl(title);
-
+            uiwebview.setBackgroundColor(Color.BLACK);
             //uiwebview.getUrl();
             Log.v("huangzf", "the url is "+ title);
         }
