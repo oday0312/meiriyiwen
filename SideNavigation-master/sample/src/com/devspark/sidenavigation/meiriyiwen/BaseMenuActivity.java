@@ -3,7 +3,12 @@ package com.devspark.sidenavigation.meiriyiwen;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
+import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ImageView;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -19,6 +24,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import android.R.*;
+
 
 import java.io.IOException;
 
@@ -79,22 +86,50 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
             sideNavigationView.setMode(getIntent().getIntExtra(EXTRA_MODE, 0) == 0 ? SideNavigationView.Mode.LEFT : SideNavigationView.Mode.RIGHT);
         }
 
+        {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads()
+                    .detectDiskWrites().detectNetwork().penaltyLog().build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
+            String title = "http://meiriyiwen.com/random/mobile";
+            //setTitle(title);
+            WebView uiwebview = (WebView)findViewById(R.id.webView1);
+            uiwebview.setWebViewClient(new Callback());
+            uiwebview.getSettings().setBuiltInZoomControls(true);
+            uiwebview.getSettings().setJavaScriptEnabled(true);
+            uiwebview.loadUrl(title);
 
+        }
+
+        Button freshButton =(Button)findViewById(R.id.freshbutton);
+        freshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadUrl();
+            }
+        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        testCuzySDKfunction();
+
 
 
     }
 
-    public void testSimpleListView()
+    public void loadUrl()
     {
-
-
-
-
-
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads()
+                .detectDiskWrites().detectNetwork().penaltyLog().build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects()
+                .detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
+        String title = "http://meiriyiwen.com/random/mobile";
+        //setTitle(title);
+        WebView uiwebview = (WebView)findViewById(R.id.webView1);
+        uiwebview.setWebViewClient(new Callback());
+        uiwebview.getSettings().setBuiltInZoomControls(true);
+        uiwebview.getSettings().setJavaScriptEnabled(true);
+        uiwebview.loadUrl(title);
     }
+
     public void testCuzySDKfunction()
     {
 
@@ -444,5 +479,32 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
             result= EntityUtils.toString(entity, HTTP.UTF_8);
         }
         return result;
+    }
+
+
+    private class Callback extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view,String url){
+            return false;
+        }
+        @Override
+        public void onPageStarted(android.webkit.WebView view, java.lang.String url, android.graphics.Bitmap favicon){
+
+
+
+        }
+        @Override
+        public void onPageFinished(android.webkit.WebView view, java.lang.String url) {
+
+
+        }
+        @Override
+        public void onReceivedError(android.webkit.WebView view, int errorCode, java.lang.String description, java.lang.String failingUrl){
+
+
+
+
+        }
+
     }
 }

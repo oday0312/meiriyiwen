@@ -16,7 +16,7 @@
       <root url="jar://$PROJECT_DIR$/SideNavigation-master/sample/lib/gcm.jar!/" />
       <root url="jar://$PROJECT_DIR$/SideNavigation-master/sample/lib/commons-io-1.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/SideNavigation-master/sample/lib/android-query-full.0.25.5-beta.jar!/" />
-      <root url="jar://$PROJECT_DIR$/SideNavigation-master/sample/lib/CuzyAdSDKAndroid.jar!/" />
+      <root url="jar://$PROJECT_DIR$/SideNavigation-master/sample/lib/jsoup-1.7.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

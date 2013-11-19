@@ -38,14 +38,7 @@
                   android:screenOrientation="portrait"
 
                 />
-        <activity android:name=".baseMenuActivity4"
-                  android:screenOrientation="portrait"
 
-                />
-        <activity android:name=".baseMenuActivity5"
-                  android:screenOrientation="portrait"
-
-                />
 
         <activity android:name=".webViewActivity"
                   android:screenOrientation="portrait"/>
