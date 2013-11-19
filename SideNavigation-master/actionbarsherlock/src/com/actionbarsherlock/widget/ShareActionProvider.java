@@ -65,7 +65,7 @@ import com.actionbarsherlock.widget.ActivityChooserModel.OnChooseActivityListene
  * </code>
  * </p>
  * <p>
- * <strong>Note:</strong> While the meiriyiwen snippet demonstrates how to use this provider
+ * <strong>Note:</strong> While the yeeyanAndroid snippet demonstrates how to use this provider
  * in the context of a menu item, the use of the provider is not limited to menu items.
  * </p>
  *
@@ -245,7 +245,7 @@ public class ShareActionProvider extends ActionProvider {
 
     /**
      * Sets an intent with information about the share action. Here is a
-     * meiriyiwen for constructing a share intent:
+     * yeeyanAndroid for constructing a share intent:
      * <p>
      * <pre>
      * <code>
