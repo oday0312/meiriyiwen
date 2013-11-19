@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -41,6 +42,10 @@ public class webViewActivity extends Activity {
             uiwebview.setWebViewClient(new Callback());
             uiwebview.getSettings().setBuiltInZoomControls(true);
             uiwebview.getSettings().setJavaScriptEnabled(true);
+            uiwebview.getSettings().setPluginsEnabled(true);
+            uiwebview.getSettings().setPluginState(WebSettings.PluginState.ON);
+
+
             uiwebview.loadUrl(title);
             uiwebview.setBackgroundColor(Color.BLACK);
             //uiwebview.getUrl();
