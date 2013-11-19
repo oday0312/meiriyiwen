@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_library1" default="compile.module.library1">
+  <dirname property="module.library1.basedir" file="${ant.file.module_library1}"/>
+  
+  <property name="module.jdk.home.library1" value="${jdk.home.android_4.2.2_platform}"/>
+  <property name="module.jdk.bin.library1" value="${jdk.bin.android_4.2.2_platform}"/>
+  <property name="module.jdk.classpath.library1" value="jdk.classpath.android_4.2.2_platform"/>
+  
+  <property name="compiler.args.library1" value="${compiler.args}"/>
+  
+  <property name="library1.output.dir" value="${module.library1.basedir}/../../../out/production/library1"/>
+  <property name="library1.testoutput.dir" value="${module.library1.basedir}/../../../out/test/library1"/>
+  
+  <path id="library1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="library1.module.production.classpath">
+    <path refid="${module.jdk.classpath.library1}"/>
+    <path refid="library.android-support-v4-r12.classpath"/>
+    <pathelement location="${actionbarsherlock.output.dir}"/>
+  </path>
+  
+  <path id="library1.runtime.production.module.classpath">
+    <pathelement location="${library1.output.dir}"/>
+    <path refid="library.android-support-v4-r12.classpath"/>
+    <path refid="actionbarsherlock.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="library1.module.classpath">
+    <path refid="${module.jdk.classpath.library1}"/>
+    <pathelement location="${library1.output.dir}"/>
+    <path refid="library.android-support-v4-r12.classpath"/>
+    <pathelement location="${actionbarsherlock.testoutput.dir}"/>
+    <pathelement location="${actionbarsherlock.output.dir}"/>
+  </path>
+  
+  <path id="library1.runtime.module.classpath">
+    <pathelement location="${library1.testoutput.dir}"/>
+    <pathelement location="${library1.output.dir}"/>
+    <path refid="library.android-support-v4-r12.classpath"/>
+    <path refid="actionbarsherlock.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.library1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.library1">
+    <patternset refid="excluded.from.module.library1"/>
+  </patternset>
+  
+  <path id="library1.module.sourcepath">
+    <dirset dir="${module.library1.basedir}">
+      <include name="gen"/>
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.library1" depends="compile.module.library1.production,compile.module.library1.tests" description="Compile module library1"/>
+  
+  <target name="compile.module.library1.production" depends="register.custom.compilers,compile.module.actionbarsherlock" description="Compile module library1; production classes">
+    <mkdir dir="${library1.output.dir}"/>
+    <javac2 destdir="${library1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.library1}/javac">
+      <compilerarg line="${compiler.args.library1}"/>
+      <bootclasspath refid="library1.module.bootclasspath"/>
+      <classpath refid="library1.module.production.classpath"/>
+      <src refid="library1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.library1"/>
+    </javac2>
+    
+    <copy todir="${library1.output.dir}">
+      <fileset dir="${module.library1.basedir}/gen">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.library1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.library1.tests" depends="register.custom.compilers,compile.module.library1.production" description="compile module library1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.library1" description="cleanup module">
+    <delete dir="${library1.output.dir}"/>
+    <delete dir="${library1.testoutput.dir}"/>
+  </target>
+</project>

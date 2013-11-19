@@ -17,6 +17,7 @@
 package com.devspark.sidenavigation.meiriyiwen;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -83,6 +84,7 @@ public class MainActivity extends SherlockActivity implements ISideNavigationCal
             String title = "http://meiriyiwen.com/index/mobile";
             //setTitle(title);
             WebView uiwebview = (WebView)findViewById(R.id.meiriyiwenWeb);
+            uiwebview.setBackgroundColor(Color.BLACK);
             uiwebview.setWebViewClient(new Callback());
             uiwebview.getSettings().setBuiltInZoomControls(true);
             uiwebview.getSettings().setJavaScriptEnabled(true);
