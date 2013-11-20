@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/myRelateLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black">
 
-    <com.devspark.sidenavigation.meiriyiwen.LoadMoreListView.LoadMoreListView
-            android:layout_width="wrap_content"
-            android:layout_height="254dp"
-            android:id="@+id/listView" android:layout_centerHorizontal="true" android:layout_centerVertical="true"
-            android:layout_alignTop="@+id/side_navigation_view" android:layout_alignBottom="@+id/side_navigation_view"
+    <WebView
+            android:id="@+id/menu2webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
             />
-
 
     <com.devspark.sidenavigation.SideNavigationView
             android:id="@+id/side_navigation_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
+
+
 </RelativeLayout>

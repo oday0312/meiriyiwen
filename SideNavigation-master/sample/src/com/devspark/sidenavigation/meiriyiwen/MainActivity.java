@@ -238,7 +238,7 @@ public class MainActivity extends SherlockActivity implements ISideNavigationCal
         overridePendingTransition(0, 0);
     }
     private void invokeActivity4(String title, int resId) {
-        Intent intent = new Intent(this, baseMenuActivity2.class);
+        Intent intent = new Intent(this, baseMenuActivity4.class);
         intent.putExtra(EXTRA_TITLE, title);
         intent.putExtra(EXTRA_RESOURCE_ID, resId);
         intent.putExtra(EXTRA_MODE, sideNavigationView.getMode() == Mode.LEFT ? 0 : 1);
@@ -254,7 +254,7 @@ public class MainActivity extends SherlockActivity implements ISideNavigationCal
     }
 
     private void invokeActivity5(String title, int resId) {
-        Intent intent = new Intent(this, baseMenuActivity2.class);
+        Intent intent = new Intent(this, baseMenuActivity5.class);
         intent.putExtra(EXTRA_TITLE, title);
         intent.putExtra(EXTRA_RESOURCE_ID, resId);
         intent.putExtra(EXTRA_MODE, sideNavigationView.getMode() == Mode.LEFT ? 0 : 1);

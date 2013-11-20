@@ -3,10 +3,10 @@
 
     <string name="app_name">每日一文</string>
     <string name="title1">每日一文-随机文章</string>
-    <string name="title2">每日一文-声音</string>
+    <string name="title2">片刻-声音</string>
     <string name="title3">每日一文-书架</string>
-    <string name="title4">每日一文-</string>
-    <string name="title5">每日一文-</string>
+    <string name="title4">片刻-主题</string>
+    <string name="title5">每日淘淘</string>
 
     <string name="mode">视图模式</string>
     <string name="mode_left">左</string>

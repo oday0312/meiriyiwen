@@ -1,21 +1,28 @@
 package com.devspark.sidenavigation.meiriyiwen;
 
+import android.R.id;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.devspark.sidenavigation.ISideNavigationCallback;
 import com.devspark.sidenavigation.SideNavigationView;
 import com.devspark.sidenavigation.meiriyiwen.imageCache.ImageLoader;
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 import com.umeng.analytics.MobclickAgent;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -24,8 +31,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
-import android.R.*;
-
 
 import java.io.IOException;
 
@@ -37,7 +42,7 @@ import java.io.IOException;
  * Time: 下午6:24
  * To change this template use File | Settings | File Templates.
  */
-public class BaseMenuActivity extends SherlockActivity implements ISideNavigationCallback{
+public class baseMenuActivity5 extends SherlockActivity implements ISideNavigationCallback{
 
     public static final String EXTRA_TITLE = "com.devspark.sidenavigation.meiriyiwen.extra.MTGOBJECT";
     public static final String EXTRA_RESOURCE_ID = "com.devspark.sidenavigation.meiriyiwen.extra.RESOURCE_ID";
@@ -57,21 +62,40 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     protected String imageCacheDir = null;
 
     public ImageLoader imageLoader=  null;
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.menuactivity2);
+
+        adView = new AdView(this, AdSize.SMART_BANNER, "a15195f21aafd4d");
+
+        // 查找 LinearLayout，假设其已获得
+        // 属性 android:id="@+id/mainLayout"
+        RelativeLayout layout = (RelativeLayout) findViewById(R.id.myRelateLayout);
+
+        // 在其中添加 adView
+        layout.addView(adView,1);
+
+        // 启动一般性请求并在其中加载广告
+        adView.loadAd(new AdRequest());
 
 
 
+        String[] strings = new String[]{
+                "http://r.m.taobao.com/m3?p=mm_31846197_4064295_13216326&c=1007",
+                "http://r.m.taobao.com/m3?p=mm_31846197_4064295_13216326&c=1008",
+                "http://r.m.taobao.com/m3?p=mm_31846197_4064295_13216326&c=1043",
+                "http://r.m.taobao.com/m3?p=mm_31846197_4064295_13216326&c=1071",
+                "http://r.m.taobao.com/m3?p=mm_31846197_4064295_13216326&c=1562",
+                "http://r.m.taobao.com/m3?p=mm_31846197_4064295_13216326&c=1563"
 
-        setContentView(R.layout.menuactivity1);
+        };
 
 
-
-
-        icon = (ImageView) findViewById(android.R.id.icon);
+        icon = (ImageView) findViewById(id.icon);
         sideNavigationView = (SideNavigationView) findViewById(R.id.side_navigation_view);
         sideNavigationView.setMenuItems(R.menu.side_navigation_menu);
         sideNavigationView.setMenuClickCallback(this);
@@ -82,7 +106,7 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
             String title = getIntent().getStringExtra(EXTRA_TITLE);
             int resId = getIntent().getIntExtra(EXTRA_RESOURCE_ID, 0);
             setTitle(title);
-             //icon.setImageResource(resId);
+            //icon.setImageResource(resId);
             sideNavigationView.setMode(getIntent().getIntExtra(EXTRA_MODE, 0) == 0 ? SideNavigationView.Mode.LEFT : SideNavigationView.Mode.RIGHT);
         }
 
@@ -91,23 +115,44 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
                     .detectDiskWrites().detectNetwork().penaltyLog().build());
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects()
                     .detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
-            String title = "http://meiriyiwen.com/random/mobile";
+
+            int length = strings.length;
+            int randomnumber =((int)Math.random()) % length;
+
+            String title = strings[randomnumber];
             //setTitle(title);
-            WebView uiwebview = (WebView)findViewById(R.id.webView1);
+            WebView uiwebview = (WebView)findViewById(R.id.menu2webview);
             uiwebview.setWebViewClient(new Callback());
             uiwebview.getSettings().setBuiltInZoomControls(true);
             uiwebview.getSettings().setJavaScriptEnabled(true);
+
+
+            uiwebview.getSettings().setUseWideViewPort(true);
+            uiwebview.getSettings().setLoadWithOverviewMode(true);
+
+            WebSettings webSettings= uiwebview.getSettings();
+
+            DisplayMetrics metrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            int mDensity = metrics.densityDpi;
+            if (mDensity == 240) {
+                uiwebview.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
+            } else if (mDensity == 160) {
+                uiwebview.getSettings().setDefaultZoom(WebSettings.ZoomDensity.MEDIUM);
+            } else if(mDensity == 120) {
+                uiwebview.getSettings().setDefaultZoom(WebSettings.ZoomDensity.CLOSE);
+            }else if(mDensity == DisplayMetrics.DENSITY_XHIGH){
+                uiwebview.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
+            }else if (mDensity == DisplayMetrics.DENSITY_TV){
+                uiwebview.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
+            }
+
+
             uiwebview.loadUrl(title);
 
         }
 
-        Button freshButton =(Button)findViewById(R.id.freshbutton);
-        freshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadUrl();
-            }
-        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -115,20 +160,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
     }
 
-    public void loadUrl()
-    {
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads()
-                .detectDiskWrites().detectNetwork().penaltyLog().build());
-        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects()
-                .detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
-        String title = "http://meiriyiwen.com/random/mobile";
-        //setTitle(title);
-        WebView uiwebview = (WebView)findViewById(R.id.webView1);
-        uiwebview.setWebViewClient(new Callback());
-        uiwebview.getSettings().setBuiltInZoomControls(true);
-        uiwebview.getSettings().setJavaScriptEnabled(true);
-        uiwebview.loadUrl(title);
-    }
 
     public void testCuzySDKfunction()
     {
@@ -149,8 +180,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
                 currentPageIndex = 1;
                 try{
-                    String urlstring = "http://select.yeeyan.org/lists/social/horizontal/" + currentPageIndex;
-                    htmlContentString = getResultForHttpGet(urlstring);
                 }
                 catch (Exception e)
                 {
@@ -165,8 +194,6 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
                 currentPageIndex++;
                 try{
-                    String urlstring = "http://select.yeeyan.org/lists/social/horizontal/" + currentPageIndex;
-                    htmlContentString = getResultForHttpGet(urlstring);
                 }
                 catch (Exception e)
                 {
@@ -248,7 +275,7 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home:
+            case id.home:
                 sideNavigationView.toggleMenu();
                 break;
             case R.id.mode_left:
@@ -268,6 +295,7 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
 
     @Override
     public void onSideNavigationItemClick(int itemId) {
+
         switch (itemId) {
             case R.id.side_navigation_menu_item1:
                 invokeActivity1(getString(R.string.title1), R.drawable.ic_android1);
@@ -298,6 +326,7 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
     @Override
     public void onBackPressed() {
         // hide menu if it shown
+        adView.setVisibility(View.INVISIBLE);
 
         if (sideNavigationView.isShown()) {
             sideNavigationView.hideMenu();
@@ -489,18 +518,18 @@ public class BaseMenuActivity extends SherlockActivity implements ISideNavigatio
             return false;
         }
         @Override
-        public void onPageStarted(android.webkit.WebView view, java.lang.String url, android.graphics.Bitmap favicon){
+        public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon){
 
 
 
         }
         @Override
-        public void onPageFinished(android.webkit.WebView view, java.lang.String url) {
+        public void onPageFinished(WebView view, String url) {
 
 
         }
         @Override
-        public void onReceivedError(android.webkit.WebView view, int errorCode, java.lang.String description, java.lang.String failingUrl){
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
 
 
 
