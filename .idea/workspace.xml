@@ -30,10 +30,13 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="728b621c-4d6f-440f-be10-098d79f50c09" name="Default" comment="" />
+    <list default="true" id="728b621c-4d6f-440f-be10-098d79f50c09" name="Default" comment="update..~~">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SideNavigation-master/sample/gen/com/devspark/sidenavigation/meiriyiwen/BuildConfig.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="information.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="728b621c-4d6f-440f-be10-098d79f50c09" time="1384952185316" ignored="false" />
+    <file path="/Dummy.txt" changelist="728b621c-4d6f-440f-be10-098d79f50c09" time="1384962946535" ignored="false" />
     <file path="/menuActivity1.java" changelist="728b621c-4d6f-440f-be10-098d79f50c09" time="1371721065638" ignored="false" />
     <file path="$PROJECT_DIR$/../cuzy-android/CuzyAdSDKAndroid/src/com/theindex/CuzyAdSDK/CuzyNetCenter.java" changelist="728b621c-4d6f-440f-be10-098d79f50c09" time="1371296617510" ignored="false" />
     <file path="/fragment.java" changelist="728b621c-4d6f-440f-be10-098d79f50c09" time="1384956340518" ignored="false" />
@@ -156,7 +159,7 @@
       <file leaf-file-name="baseMenuActivity2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/src/com/devspark/sidenavigation/meiriyiwen/baseMenuActivity2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="404" column="57" selection-start="13433" selection-end="13433" vertical-scroll-proportion="-39.384617">
+            <state line="404" column="57" selection-start="13433" selection-end="13433" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,7 +171,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="40" selection-start="464" selection-end="464" vertical-scroll-proportion="-2.8846154">
+            <state line="10" column="40" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -198,7 +201,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="47" selection-start="147" selection-end="161" vertical-scroll-proportion="-0.28846154">
+            <state line="2" column="47" selection-start="147" selection-end="161" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -216,7 +219,7 @@
       <file leaf-file-name="baseMenuActivity3.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/src/com/devspark/sidenavigation/meiriyiwen/baseMenuActivity3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="46" selection-start="697" selection-end="697" vertical-scroll-proportion="35.884617">
+            <state line="24" column="46" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -234,7 +237,7 @@
       <file leaf-file-name="baseMenuActivity5.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/src/com/devspark/sidenavigation/meiriyiwen/baseMenuActivity5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="13" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.3323263">
+            <state line="44" column="13" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.033557046">
               <folding />
             </state>
           </provider>
@@ -293,8 +296,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="273" />
-    <option name="y" value="224" />
+    <option name="x" value="110" />
+    <option name="y" value="51" />
     <option name="width" value="1485" />
     <option name="height" value="631" />
   </component>
@@ -511,13 +514,13 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="ExportedApkPath" value="$PROJECT_DIR$/SideNavigation-master/sample/sample.apk" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="ExportedApkPath" value="$PROJECT_DIR$/SideNavigation-master/sample/sample.apk" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="ExportedModule" value="sample" />
-    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/SideNavigation-master/sample/lib/jsoup-1.7.3.jar!/" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="meiriyiwen" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -593,19 +596,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -631,6 +621,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -862,19 +865,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="273" y="224" width="1485" height="631" extended-state="0" />
+    <frame x="110" y="51" width="1485" height="631" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30221704" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288026" sideWeight="0.98031497" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3974359" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3060606" sideWeight="0.20139697" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28767124" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35812134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929292" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2494788" sideWeight="0.7729941" order="1" side_tool="false" content_ui="tabs" />
@@ -885,8 +886,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13349369" sideWeight="0.6476079" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41310883" sideWeight="0.6476079" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288026" sideWeight="0.98031497" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32672113" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28767124" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -981,9 +984,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="0" selection-end="981" vertical-scroll-proportion="-2.5961537">
-          <folding />
-        </state>
+        <state line="12" column="18" selection-start="0" selection-end="981" vertical-scroll-proportion="-2.5961537" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/res/values/colors.xml">
@@ -1002,9 +1003,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/Documents/adt-bundle-mac-x86_64-20130219/sdk/platforms/android-17/android.jar!/java/lang/Math.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="38" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="90" column="38" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/AndroidManifest.xml">
@@ -1016,14 +1015,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/src/com/devspark/sidenavigation/meiriyiwen/baseMenuActivity2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="404" column="57" selection-start="13433" selection-end="13433" vertical-scroll-proportion="-39.384617">
+        <state line="404" column="57" selection-start="13433" selection-end="13433" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/src/com/devspark/sidenavigation/meiriyiwen/baseMenuActivity3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="46" selection-start="697" selection-end="697" vertical-scroll-proportion="35.884617">
+        <state line="24" column="46" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1047,7 +1046,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="40" selection-start="464" selection-end="464" vertical-scroll-proportion="-2.8846154">
+        <state line="10" column="40" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1064,7 +1063,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="47" selection-start="147" selection-end="161" vertical-scroll-proportion="-0.28846154">
+        <state line="2" column="47" selection-start="147" selection-end="161" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1078,7 +1077,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SideNavigation-master/sample/src/com/devspark/sidenavigation/meiriyiwen/baseMenuActivity5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="13" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.3323263">
+        <state line="44" column="13" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.033557046">
           <folding />
         </state>
       </provider>
